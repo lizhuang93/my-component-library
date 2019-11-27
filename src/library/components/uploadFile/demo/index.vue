@@ -10,20 +10,45 @@
         <img :src="preview(item)" alt="" />
       </div>
     </section>
-    <Add @onAdd="onAdd" @onSuccess="onSuccess" @onProgress="onProgress" @onFailed="onFailed"></Add>
+    <Add
+      @onAdd="onAdd"
+      @onSuccess="onSuccess"
+      @onProgress="onProgress"
+      @onFailed="onFailed"
+      :url="post.url"
+      :uploadMethod="post.method"
+    ></Add>
+    <select @change="onChange">
+      <option selected="selected" value="formdata">formdata</option>
+      <option value="arraybuffer">arraybuffer</option>
+    </select>
+    <read-me class="mark-down"></read-me>
   </div>
 </template>
 
 <script>
 import Add from '../add';
+import ReadMe from './readme.md';
+const POST_METHOD = {
+  formdata: {
+    url: '/api/fileUploadByFormData',
+    method: 'formdata',
+  },
+  arraybuffer: {
+    url: '/api/fileUploadByArrayBuffer',
+    method: 'arraybuffer',
+  },
+};
 export default {
   components: {
     Add,
+    ReadMe,
   },
   props: {},
   data() {
     return {
       fileList: [],
+      post: POST_METHOD.formdata,
     };
   },
 
@@ -45,7 +70,8 @@ export default {
       });
     },
     onSuccess({ file, res }) {
-      console.log(file, res);
+      console.log('file--->', file);
+      console.log('res.data--->', res.data);
     },
     onProgress({ file, progress }) {
       const index = this.fileList.findIndex(i => i.name === file.name);
@@ -64,6 +90,10 @@ export default {
         var src = window.URL.createObjectURL(file.file);
         return src;
       }
+    },
+    onChange({ target }) {
+      console.log(target.value);
+      this.post = POST_METHOD[target.value];
     },
   },
 };

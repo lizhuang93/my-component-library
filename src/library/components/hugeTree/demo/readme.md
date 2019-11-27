@@ -1,3 +1,7 @@
+## demo code
+
+请查看 demo 源码: hugeTree/demo/index.vue
+
 ## node 节点样例
 
 ```
