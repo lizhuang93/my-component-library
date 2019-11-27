@@ -1,3 +1,5 @@
+最新版本请查看：[https://github.com/bitmain-frontend/huge-tree](https://github.com/bitmain-frontend/huge-tree)
+
 ## demo code
 
 请查看 demo 源码: hugeTree/demo/index.vue
