@@ -90,10 +90,12 @@ export default {
      * params {x2} string '150000'
      */
     getPosition(x1, x2) {
-      // group的宽度 分成24份， 这里只精确到小时，精确到分秒太复杂
+      // group的宽度 分成24份， 这里精确到分钟，精确到秒太复杂
       const unit = this.width / 24;
-      const offset = Number(x1.substr(0, 2)) * unit;
-      const width = (Number(x2.substr(0, 2)) - Number(x1.substr(0, 2))) * unit;
+      const h1 = Number(x1.substr(0, 2)) + Number(x1.substr(2, 2)) / 60;
+      const h2 = Number(x2.substr(0, 2)) + Number(x2.substr(2, 2)) / 60;
+      const offset = h1 * unit;
+      const width = (h2 - h1) * unit;
       return {
         width,
         offset,

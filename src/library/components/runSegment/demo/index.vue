@@ -22,7 +22,7 @@ export default {
         },
         {
           activityType: 2,
-          activityTime: '120000',
+          activityTime: '103000',
         },
         {
           activityType: 1,
