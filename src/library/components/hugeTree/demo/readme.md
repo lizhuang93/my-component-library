@@ -1,4 +1,4 @@
-最新版本请查看：[https://github.com/bitmain-frontend/huge-tree](https://github.com/bitmain-frontend/huge-tree)
+最新版本请查看：[https://github.com/bitmain-frontend/huge-tree](https://github.com/bitmain-frontend/huge-tree), 这里使用了 @bitmain/components-tree 包。
 
 ## demo code
 

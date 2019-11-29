@@ -13,7 +13,7 @@
     </div>
 
     <div class="tree-wrap" v-show="isShowDialog">
-      <huge-tree
+      <btm-huge-tree
         ref="huge-tree"
         hasInput
         checkedAction="dblclick"
@@ -28,7 +28,7 @@
         @onClickCheckbox="onClickCheckbox"
       >
         <span slot-scope="{ slotScope }"><i>&#9733;</i> {{ slotScope.label }}</span>
-      </huge-tree>
+      </btm-huge-tree>
     </div>
     <read-me class="mark-down"></read-me>
   </div>
@@ -36,11 +36,11 @@
 
 <script>
 import axios from 'axios';
-import HugeTree from '../index.vue';
+// import HugeTree from '../index.vue';
 import ReadMe from './readme.md';
 export default {
   components: {
-    HugeTree,
+    // 'btm-huge-tree': HugeTree,
     ReadMe,
   },
   props: {},
@@ -118,6 +118,7 @@ export default {
   }
   .tree-wrap {
     width: 400px;
+    height: 600px;
   }
 }
 </style>

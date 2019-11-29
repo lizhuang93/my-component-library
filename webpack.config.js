@@ -37,11 +37,11 @@ module.exports = {
         test: /\.(js|vue)$/,
         enforce: 'pre',
         use: ['happypack/loader?id=eslint'],
-        exclude: /(node_modules|bower_components)/,
+        exclude: /(node_modules\/(?!@bitmain)|bower_components)/, // node_modules里@bitmain需要解析
       },
       {
         test: /\.(js|jsx)$/,
-        exclude: /(node_modules|bower_components)/,
+        exclude: /(node_modules\/(?!@bitmain)|bower_components)/,
         use: ['happypack/loader?id=babel'],
       },
       {
@@ -66,7 +66,7 @@ module.exports = {
       },
       {
         test: /\.vue$/,
-        exclude: /(node_modules|bower_components)/,
+        exclude: /(node_modules\/(?!@bitmain)|bower_components)/,
         use: [
           {
             loader: 'vue-loader',
@@ -92,7 +92,7 @@ module.exports = {
           limit: 10000,
           name: path.resolve(__dirname, 'img/[name].[hash:7].[ext]'),
         },
-        exclude: /(node_modules|bower_components)/,
+        exclude: /(node_modules\/(?!@bitmain)|bower_components)/,
       },
       {
         test: /\.(mp4|webm|ogg|mp3|wav|flac|aac)(\?.*)?$/,
@@ -101,7 +101,7 @@ module.exports = {
           limit: 10000,
           name: path.resolve(__dirname, 'media/[name].[hash:7].[ext]'),
         },
-        exclude: /(node_modules|bower_components)/,
+        exclude: /(node_modules\/(?!@bitmain)|bower_components)/,
       },
       {
         test: /\.(woff2?|eot|ttf|otf)(\?.*)?$/,
@@ -110,7 +110,7 @@ module.exports = {
           limit: 10000,
           name: path.resolve(__dirname, 'font/[name].[hash:7].[ext]'),
         },
-        exclude: /(node_modules|bower_components)/,
+        exclude: /(node_modules\/(?!@bitmain)|bower_components)/,
       },
       {
         test: /\.md$/,

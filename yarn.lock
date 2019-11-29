@@ -86,6 +86,14 @@
     lodash "^4.17.11"
     to-fast-properties "^2.0.0"
 
+"@bitmain/components-tree@^1.0.17":
+  version "1.0.17"
+  resolved "https://registry.yarnpkg.com/@bitmain/components-tree/-/components-tree-1.0.17.tgz#0e5d2654ad090d23f0e190bae6395afa2e6a73eb"
+  dependencies:
+    axios "^0.19.0"
+    vue "^2.6.10"
+    vue-router "^3.0.6"
+
 "@samverschueren/stream-to-observable@^0.3.0":
   version "0.3.0"
   resolved "https://registry.yarnpkg.com/@samverschueren/stream-to-observable/-/stream-to-observable-0.3.0.tgz#ecdf48d532c58ea477acfcab80348424f8d0662f"
