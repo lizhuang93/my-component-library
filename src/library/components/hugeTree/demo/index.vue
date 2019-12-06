@@ -36,11 +36,11 @@
 
 <script>
 import axios from 'axios';
-// import HugeTree from '../index.vue';
+import HugeTree from '../index.vue';
 import ReadMe from './readme.md';
 export default {
   components: {
-    // 'btm-huge-tree': HugeTree,
+    'btm-huge-tree': HugeTree,
     ReadMe,
   },
   props: {},
