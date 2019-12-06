@@ -21,7 +21,6 @@
         :isLoading="isLoading"
         :showCheckbox="true"
         :height="600"
-        :data="data"
         :defaultCheckedKeys="checkedKeys"
         @onChange="onChange"
         @onClickLabel="onClickLabel"
@@ -36,11 +35,11 @@
 
 <script>
 import axios from 'axios';
-import HugeTree from '../index.vue';
+// import HugeTree from '../index.vue';
 import ReadMe from './readme.md';
 export default {
   components: {
-    'btm-huge-tree': HugeTree,
+    // 'btm-huge-tree': HugeTree,
     ReadMe,
   },
   props: {},
@@ -76,7 +75,7 @@ export default {
     btnClick(count) {
       this.isShowDialog = true;
       axios.get(`/static/json/${count}.json`).then(({ data }) => {
-        this.data = data;
+        this.$refs['huge-tree'].setData(data);
         this.isLoading = false;
         setTimeout(() => {
           // this.checkedKeys = ['1-3', '1-5'];
