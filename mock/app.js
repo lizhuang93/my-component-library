@@ -7,6 +7,8 @@ const DEF_ENV = require('./config/env');
 const _static = serve(path.join(__dirname, 'static'));
 const app = new Koa();
 
+require('./webSocket');
+
 app.use(
   koaBody({
     multipart: true,

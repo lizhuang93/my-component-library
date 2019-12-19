@@ -35,6 +35,14 @@ export default {
           path: '/demo/hugeTree',
           text: 'tree组件(海量数据)',
         },
+        {
+          path: '/demo/webSocket',
+          text: 'webSocket',
+        },
+        {
+          path: '/demo/notification',
+          text: 'notification',
+        },
       ],
     };
   },
