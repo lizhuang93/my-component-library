@@ -1,4 +1,4 @@
-import NotifyPage from './main.js'; // 页面级通知
+import elNotification from './main.js'; // 页面级通知
 
 /**
  * 1. 页面可见 || 浏览器不支持 Notification || 浏览器禁止了 Notification, 页面级通知
@@ -7,10 +7,9 @@ import NotifyPage from './main.js'; // 页面级通知
  */
 export default function(options = {}) {
   if (window.document.visibilityState === 'visible' || !window.Notification) {
-    NotifyPage(options);
+    elNotification(options);
     return;
   }
-  console.log('fas');
 
   if (Notification.permission == 'granted') {
     popNotice(options); // 系统级通知
@@ -19,7 +18,7 @@ export default function(options = {}) {
       popNotice(options); // 系统级通知
     });
   } else {
-    NotifyPage(options); // 页面级通知
+    elNotification(options); // 页面级通知
   }
 }
 

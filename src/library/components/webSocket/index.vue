@@ -33,7 +33,6 @@ export default {
 
   methods: {
     conect() {
-      // this.ws = new WebSocket('ws://10.63.0.81:19018/socket/fdsafdsfsa');
       this.ws = new WebSocket(this.url);
       this.ws.onopen = evt => {
         this.lived();
@@ -64,7 +63,8 @@ export default {
     },
 
     send(msg) {
-      if (typeof msg === 'object' && typeof msg !== null) msg = JSON.stringify(msg);
+      if (this.ws.readyState !== WebSocket.OPEN) return;
+      if (typeof msg === 'object' && msg !== null) msg = JSON.stringify(msg);
       this.ws.send(msg);
     },
 
